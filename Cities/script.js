@@ -29,8 +29,7 @@
             name: 'city',
             required: true,
             checks: [{
-                error: 'Выберите один из предложенных городов. Если вашего города нет среди предлагаемых, выберите ближайший.',
-// !!!!! Пока я отлаживал эту функцию, у меня исчерпался лимит у предложенного вами сервиса списка городов, так что где-то тут осталась ошибка. Валидация этого поля будет некорректной.
+                error: 'Выберите один из предложенных городов. Если вашего населённого пункта нет среди предлагаемых, выберите ближайший.',
                 func: function(errText, field) {
                     $.ajax({
                         type: 'GET',
@@ -38,12 +37,15 @@
                         url: "http://htmlweb.ru/geo/api.php?city_name=" + field.value + "&json",
                         success: function(data){
                             var goodField = false;
-                            for (var i = 0; i < data.limit; i++) {
-                                if (data[i].name == field.value) {
+                            for (i in data) {
+                                if (data[i].name && data[i].name == field.value) {
                                     goodField = true;
                                 }
                             }
                             if (!goodField) writeError(field, errText);
+                        },
+                        error: function (jqXHR, exception) {
+                            writeError(field, errText);
                         }
                     });
                 }
@@ -122,7 +124,7 @@
             var ollKorrect = document.createElement('div');
             ollKorrect.className = "ollKorrect";
             ollKorrect.innerHTML = "Форма заполнена правильно!";
-            that.parentElement.appendChild(ollKorrect);
+            that[0].parentElement.appendChild(ollKorrect);
         }
     });
     $('input[type="text"], textarea').on('focus', deleteError);
