@@ -1,0 +1,104 @@
+<html>
+<head>
+    <style>
+        .tab {
+            margin-bottom: 20px;
+        }
+        .tab__button {
+            background-color: green;
+            border: 3px solid green;
+            border-radius: 5px 5px 0 0;
+            color: white;
+            margin-left: 10px;
+        }
+        .tab__button_active {
+            background-color: white;
+            color: black;
+        }
+        .tab__button_horizontal {
+            border-radius: 5px 0 0 5px;
+            display: block;
+            margin-left: 0;
+            margin-bottom: 5px;
+            box-sizing: border-box;
+            width: 150px;
+        }
+        .tab__text {
+            padding: 0 2.5%;
+            box-sizing: border-box;
+            padding: 10px;
+            border: 3px solid green;
+            border-radius: 10px;
+            position: relative;
+            bottom: 3px;
+            overflow: hidden;
+        }
+        .tab__text_horizontal {
+            bottom: 0;
+            right: 3px;
+        }
+        .column__left {
+            padding-top: 10px;
+            float: left;
+            width: 150px;
+            height: 300px;
+        }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="script.js"></script>
+ 
+</head>
+
+<body>
+    <div class="tab">
+        <button class="tab__button tab__button_active" data-tab="1">Первая вкладка</button>
+        <button class="tab__button" data-tab="2">Вторая вкладка</button>
+        <button class="tab__button" data-tab="3">Третья вкладка</button>
+        <button class="tab__button" data-tab="4">Четвёртая вкладка</button>
+        <div class="tab__text" data-tabtext="1">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa aliquam cum natus eveniet, enim dolor repudiandae numquam deleniti nam fugiat totam impedit perferendis alias obcaecati adipisci maxime. Modi, neque, reprehenderit.</p>
+        </div>
+        <div class="tab__text tab__text_collapsed" data-tabtext="2">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa aliquam cum natus eveniet, enim dolor repudiandae numquam deleniti nam fugiat totam impedit perferendis alias obcaecati adipisci maxime. Modi, neque, reprehenderit.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa aliquam cum natus eveniet, enim dolor repudiandae numquam deleniti nam fugiat totam impedit perferendis alias obcaecati adipisci maxime. Modi, neque, reprehenderit.</p>
+        </div>
+        <div class="tab__text tab__text_collapsed" data-tabtext="3">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa aliquam cum natus eveniet, enim dolor repudiandae numquam deleniti nam fugiat totam impedit perferendis alias obcaecati adipisci maxime. Modi, neque, reprehenderit.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa aliquam cum natus eveniet, enim dolor repudiandae numquam deleniti nam fugiat totam impedit perferendis alias obcaecati adipisci maxime. Modi, neque, reprehenderit.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa aliquam cum natus eveniet, enim dolor repudiandae numquam deleniti nam fugiat totam impedit perferendis alias obcaecati adipisci maxime. Modi, neque, reprehenderit.</p>
+        </div>
+        <div class="tab__text tab__text_collapsed" data-tabtext="4">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa aliquam cum natus eveniet, enim dolor repudiandae numquam deleniti nam fugiat totam impedit perferendis alias obcaecati adipisci maxime. Modi, neque, reprehenderit.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa aliquam cum natus eveniet, enim dolor repudiandae numquam deleniti nam fugiat totam impedit perferendis alias obcaecati adipisci maxime. Modi, neque, reprehenderit.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa aliquam cum natus eveniet, enim dolor repudiandae numquam deleniti nam fugiat totam impedit perferendis alias obcaecati adipisci maxime. Modi, neque, reprehenderit.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa aliquam cum natus eveniet, enim dolor repudiandae numquam deleniti nam fugiat totam impedit perferendis alias obcaecati adipisci maxime. Modi, neque, reprehenderit.</p>
+        </div>
+    </div>
+    <div class="tab" data-position="horizontal">
+        <div class="column__left">
+            <button class="tab__button tab__button_active tab__button_horizontal" data-tab="1">Первая вкладка</button>
+            <button class="tab__button tab__button_horizontal" data-tab="2">Вторая вкладка</button>
+            <button class="tab__button tab__button_horizontal" data-tab="3">Третья вкладка</button>
+            <button class="tab__button tab__button_horizontal" data-tab="4">Четвёртая вкладка</button>
+        </div>
+        <div class="tab__text tab__text_horizontal" data-tabtext="1">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa aliquam cum natus eveniet, enim dolor repudiandae numquam deleniti nam fugiat totam impedit perferendis alias obcaecati adipisci maxime. Modi, neque, reprehenderit.</p>
+        </div>
+        <div class="tab__text tab__text_collapsed tab__text_horizontal" data-tabtext="2">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa aliquam cum natus eveniet, enim dolor repudiandae numquam deleniti nam fugiat totam impedit perferendis alias obcaecati adipisci maxime. Modi, neque, reprehenderit.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa aliquam cum natus eveniet, enim dolor repudiandae numquam deleniti nam fugiat totam impedit perferendis alias obcaecati adipisci maxime. Modi, neque, reprehenderit.</p>
+        </div>
+        <div class="tab__text tab__text_collapsed tab__text_horizontal" data-tabtext="3">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa aliquam cum natus eveniet, enim dolor repudiandae numquam deleniti nam fugiat totam impedit perferendis alias obcaecati adipisci maxime. Modi, neque, reprehenderit.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa aliquam cum natus eveniet, enim dolor repudiandae numquam deleniti nam fugiat totam impedit perferendis alias obcaecati adipisci maxime. Modi, neque, reprehenderit.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa aliquam cum natus eveniet, enim dolor repudiandae numquam deleniti nam fugiat totam impedit perferendis alias obcaecati adipisci maxime. Modi, neque, reprehenderit.</p>
+        </div>
+        <div class="tab__text tab__text_collapsed tab__text_horizontal" data-tabtext="4">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa aliquam cum natus eveniet, enim dolor repudiandae numquam deleniti nam fugiat totam impedit perferendis alias obcaecati adipisci maxime. Modi, neque, reprehenderit.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa aliquam cum natus eveniet, enim dolor repudiandae numquam deleniti nam fugiat totam impedit perferendis alias obcaecati adipisci maxime. Modi, neque, reprehenderit.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa aliquam cum natus eveniet, enim dolor repudiandae numquam deleniti nam fugiat totam impedit perferendis alias obcaecati adipisci maxime. Modi, neque, reprehenderit.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa aliquam cum natus eveniet, enim dolor repudiandae numquam deleniti nam fugiat totam impedit perferendis alias obcaecati adipisci maxime. Modi, neque, reprehenderit.</p>
+        </div>
+    </div>
+</body>
+</html>
